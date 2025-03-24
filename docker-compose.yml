@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    env_file:
+      - .env
+  
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/test-task-app
+    env_file:
+      - .env
