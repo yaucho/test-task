@@ -1,7 +1,9 @@
 from rest_framework import viewsets
 
 from manufacturer.api.v1.serializers import (
-    CreateOrUpdateManufacturerSerializer, ManufacturerSerializer)
+    CreateOrUpdateManufacturerSerializer, 
+    ManufacturerSerializer,
+)
 from manufacturer.models import Manufacturer
 
 
