@@ -16,7 +16,9 @@ class CreditRequestSerializer(serializers.ModelSerializer):
 
 
 class CreateOrUpdateCreditRequestSerializer(serializers.ModelSerializer):
-    products = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all(), many=True)
+    products = serializers.PrimaryKeyRelatedField(
+        queryset=Product.objects.prefetch_related('credit_request'), many=True
+    )
 
     class Meta:
         model = CreditRequest

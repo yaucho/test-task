@@ -22,7 +22,8 @@ class CreditRequestService:
             )
         for key, value in data.items():
             setattr(credit_request, key, value)
-        credit_request.products.set(products)
+        credit_request.products.clear()
+        credit_request.products.add(*products)
         credit_request.save()
         return credit_request
 
