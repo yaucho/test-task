@@ -5,9 +5,7 @@ from product.models import Product
 
 
 class ProductViewSet(viewsets.ModelViewSet):
+    """CRUD operations for Product"""
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
-    def list(self, request, *args, **kwargs):
-        response = super().list(request, *args, **kwargs)
-        return response
+    http_method_names = ('get', 'post', 'put', 'delete',)

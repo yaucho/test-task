@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'contract',
     'product',
     'manufacturer',
+    'credit_request',
 ]
 
 REST_FRAMEWORK = {
