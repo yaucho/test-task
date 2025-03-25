@@ -8,7 +8,7 @@ class Product(BaseModel):
 
     manufacturer = models.ForeignKey(
         'manufacturer.Manufacturer', 
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name='products',
     )
     credit_request = models.ForeignKey(

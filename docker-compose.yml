@@ -16,3 +16,5 @@ services:
       - .:/test-task-app
     env_file:
       - .env
+    depends_on:
+      - db
