@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'contract',
+    'product',
+    'manufacturer',
 ]
 
 REST_FRAMEWORK = {
