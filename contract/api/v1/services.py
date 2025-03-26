@@ -1,14 +1,14 @@
-from contract.models import Contract
-from manufacturer.models import Manufacturer
+from credit_request.models import CreditRequest
 
 
 class ContractService:
 
     @classmethod
-    def get_unique_contract_manufacturers(cls, contract: Contract) ->list[Manufacturer]:
-        """Returns all unique manufacturers for contract"""
+    def get_unique_contract_manufacturers(cls, contract_id: int) ->list[int]:
+        """Returns all unique manufacturers ids for contract"""
         return (
-            Manufacturer.objects
-            .filter(products__credit_request__contract=contract)
+            CreditRequest.objects
+            .filter(contract_id=contract_id)
+            .values_list('products__manufacturer', flat=True)
             .distinct()
         )
