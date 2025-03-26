@@ -7,3 +7,5 @@
 ```bash
 docker-compose up --build
 ```
+## Swagger Endpoint
+`api/v1/swagger-ui/`
