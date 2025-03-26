@@ -4,13 +4,6 @@ from manufacturer.models import Manufacturer
 from product.api.v1.serializers import BaseProductSerializer
 
 
-class BaseManufacturerSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Manufacturer
-        fields = ('id', 'name',)
-
-
 class ManufacturerSerializer(serializers.ModelSerializer):
     products = BaseProductSerializer(many=True)
 
